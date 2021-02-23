@@ -1,1 +1,7 @@
-console.log("works");
+const person: {
+  name: string;
+  age: number
+} = {
+  name: "Mike",
+  age: 31
+}
