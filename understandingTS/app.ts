@@ -6,3 +6,9 @@ userInput = "John";
 if (typeof userInput === 'string') {
   userName = userInput;
 }
+
+function genError(message: string, code: number): never {
+  throw {message: message, errorCode: code};
+}
+
+genError("Not found", 404);
