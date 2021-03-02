@@ -1,24 +1,9 @@
-type Combinable = number | string;
-type Conversion = 'as-num' | 'as-text';
-
-function combine(
-  input1: Combinable, 
-  input2: Combinable, 
-  resultConversion: Conversion
-  ) {
-  let result;
-  if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-num') {
-    result = +input1 + +input2;
-  } else {
-    result = input1.toString() + input2.toString();
-  }
-  if (resultConversion === 'as-num') {
-    return +result;
-  } else {
-    return result.toString();
-  }
+function add(n1: number, n2: number) {
+  return n1+ n2;
 }
 
-const combineNums = combine(30, 25, 'as-num');
+function printResult(num: number) {
+  console.log('Result: ' + num);
+}
 
-const combineNames = combine("David", "Smith", 'as-text');
+printResult(add(5, 12));
