@@ -25,7 +25,7 @@
 class Department {
   // name: string;
   // private id: string;
-  private employees: string[] = [];
+  protected employees: string[] = [];
 
   constructor(private id: string, public name: string) {
     // this.name = n;
@@ -45,6 +45,13 @@ class Department {
     console.log(this.employees);
   }
 
+}
+
+class ITDept extends Department {
+  constructor(id: string, public admins: string[]) {
+    super(id, 'IT');
+    this.admins = admins;
+  }
 }
 
 
