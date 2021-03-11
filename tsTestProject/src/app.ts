@@ -23,20 +23,39 @@
 // const {firstName: userName, age} = person;
 
 class Department {
-  name: string;
+  // name: string;
+  // private id: string;
+  private employees: string[] = [];
 
-  constructor(n: string) {
-    this.name = n;
+  constructor(private id: string, public name: string) {
+    // this.name = n;
+    // this.id = id;
   }
 
   describe(this: Department) {
-    console.log('Department: ' + this.name)
+    console.log(`${this.id} ${this.name}`);
+  }
+
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
+
+  printEmployeeInfo() {
+    console.log(this.employees.length);
+    console.log(this.employees);
   }
 
 }
 
-const accounting = new Department("Argument");
+
+const accounting = new Department('d1',"Argument");
 accounting.describe();
 
-const accountingCopy = { name: 's', describe: accounting.describe };
-accountingCopy.describe();
+accounting.addEmployee('Mike');
+accounting.addEmployee('Greg');
+
+accounting.printEmployeeInfo();
+
+
+// const accountingCopy = { name: 's', describe: accounting.describe };
+// accountingCopy.describe();
