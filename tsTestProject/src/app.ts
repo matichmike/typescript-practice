@@ -28,6 +28,15 @@ class Department {
   constructor(n: string) {
     this.name = n;
   }
+
+  describe(this: Department) {
+    console.log('Department: ' + this.name)
+  }
+
 }
 
-new Department("Argument");
+const accounting = new Department("Argument");
+accounting.describe();
+
+const accountingCopy = { name: 's', describe: accounting.describe };
+accountingCopy.describe();
